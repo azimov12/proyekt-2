@@ -37,7 +37,7 @@ INSTALLED_APPS = [
 
     #third
     'rest_framework',
-    'rest_framework_simplejwt'
+    'rest_framework_simplejwt',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -94,7 +94,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'Noutdb', 
-        'USER': 'habibulla_hp',
+        'USER': 'postgres',
         'PASSWORD': 'azimov2003',
         'HOST': '127.0.0.1', 
         'PORT': '5432',
