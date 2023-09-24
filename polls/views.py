@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
-from .permissions import StaffPermissionClass, AdminPermissionClass
+from .permissions import StaffPermissionClass, OwnerPermission
 # Create your views here.
 
 # class CreateAPiView(APIView):
@@ -59,7 +59,7 @@ class AllApiView(generics.ListAPIView):
 
 #         return Response({'msg': 'only admin can change status'})
 
-class UpdateStatus(generics.RetrieveUpdateDestroyAPIView):
+class DetaildestroyUpdateView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Noutbook.objects.all()
     serializer_class = NoutbookSerializer
-    permission_classes = (IsAuthenticated, AdminPermissionClass)
+    permission_classes = (IsAuthenticated, OwnerPermission)    

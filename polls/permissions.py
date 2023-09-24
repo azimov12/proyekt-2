@@ -11,3 +11,9 @@ class AdminPermissionClass(BasePermission):
         if request.user.id == 3:   
             return True
         return False         
+
+class OwnerPermission(BasePermission):
+    def has_object_permission(self, request, view, obj):
+        if request.user.id == obj.user.id:
+            return True
+        return False        

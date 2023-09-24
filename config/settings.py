@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'polls',
 
     #third
+    'modeltranslation',
+    'config',
     'rest_framework',
     'rest_framework_simplejwt',
     'django.contrib.admin',
@@ -51,6 +53,8 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -143,3 +147,23 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(hours=5),
 }
+
+LANGUAGES = [
+   ('uz', 'Uzbek'),
+   ('en', 'English'),
+   ('ru', 'ussian'),
+]
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+
+# MODELTRANSLATION_
+
+MODELTRANSLATION_LANGUAGES = (
+    'en',
+    'uz',
+    'ru'
+)
+
+TRANSLATABLE_MODEL_MODULES = [
+    'config',  
+]    
